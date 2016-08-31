@@ -9,3 +9,4 @@ User.hasMany(Story, {foreignKey: 'author_id'});
 Story.belongsTo(User, {as: 'author'});
 
 module.exports = db;
+

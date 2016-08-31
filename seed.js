@@ -3,6 +3,7 @@
 var chance = require('chance')(123);
 var Promise = require('bluebird');
 
+
 var db = require('./server/db');
 var User = require('./server/api/users/user.model');
 var Story = require('./server/api/stories/story.model');

@@ -25,11 +25,13 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
+  console.log(req.body)
   User.create(req.body)
   .then(function (user) {
+    req.session.userId= user.id;
     res.status(201).json(user);
-  })
-  .catch(next);
+  }).catch(console.log("Someone already exist with that name"))
+//  .catch(next);
 });
 
 router.get('/:id', function (req, res, next) {
